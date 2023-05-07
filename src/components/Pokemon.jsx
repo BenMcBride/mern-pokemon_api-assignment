@@ -10,7 +10,7 @@ const Pokémon = () => {
     const limit = 20;
     // I didn't see until after that you can set the limit of pokemon that you can request at once,
     // so I stuck with the default limit of 20, and requested all of the pokemon 20 at a time until
-    // data.next was null (at the last page)
+    // data.next was null (at the last page).
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`);
     let data = await response.json();
     allPokémon = [...allPokémon, ...data.results];
